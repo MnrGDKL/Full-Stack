@@ -1,0 +1,44 @@
+#first {
+    background-color: cyan;
+    text-align: justify;
+    font-size: large;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: content-box;
+}
+#contentbox{
+    box-sizing: content-box;
+    height: 50px;
+    background-color: hotpink;
+    padding: 20px;
+    border: 5px solid blueviolet;
+
+}
+#borderbox{
+    box-sizing: border-box;
+    background-color: lightsalmon;
+    padding: 20px;
+    height: 50px;
+    border: 5px solid blueviolet;
+}
+#text-formating{
+    color: red;
+    text-decoration: line-through;
+    text-decoration: underline;
+    text-decoration: overline;
+    text-decoration-style: dashed;
+    text-decoration-color: black;
+    text-decoration: underline overline blueviolet wavy;
+    text-transform: uppercase;
+    text-align: center;
+    word-spacing: 15px;
+    letter-spacing: 4px;
+}
+
+p{
+    text-indent: 20px;
+}
+
+#text1{
+direction: rtl;
+}

@@ -1,0 +1,37 @@
+*{
+    font-size: 10px;
+}
+h1{
+    font-family: "Georgia", "Times New Roman", serif;
+    color: firebrick;
+    /* font-size: 3rem; */
+    font-size: 3em;
+    font-weight: 900;
+    font-variant: small-caps;
+
+}
+p{
+    font-family: 'Luxurious Roman', cursive;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+h3{
+    font-family: 'Dancing Script', cursive;
+}
+
+
+a:hover{
+    background-color: yellow;
+    color: black;
+    font-size: 15px;
+}
+a:link{
+    color:forestgreen;
+}
+a:visited{
+    color: hotpink;
+}
+a:active{
+    color: darkblue;
+}
