@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formlar</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form action="result.html">
+        <div id="sign-up">
+            <h3>Sign Up</h3>
+
+            <div id="form-data">
+                <label for="first_name" >First Name</label>
+                <input type="text" name="first_name" id="first_name">
+                <br>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name">
+                <br>
+                <label for="nick_name">Nick Name</label>
+                <input type="text" name="nick_name" id="nick_name">
+                <br>
+                <hr>
+                <table>
+                    <tr>
+                        <td rowspan="2" style="width: 50%;">
+                            <label for="age">Age</label>
+                        </td>
+                        <td>
+                            <input type="range" list="tickmarks" id="age" min="0" max="100" value="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <datalist id="tickmarks">
+                                <option value="0" label="0"></option>
+                                <option value="10" ></option>
+                                <option value="20" label="20"></option>
+                                <option value="30" ></option>
+                                <option value="40" label="40"></option>
+                                <option value="50" ></option>
+                                <option value="60" label="60"></option>
+                                <option value="70" ></option>
+                                <option value="80" label="80"></option>
+                                <option value="90" ></option>
+                                <option value="100" label="100"></option>
+                            </datalist>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <div class="gender-info">
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <hr>
+                <br>
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="usa">USA</option>
+                    <option value="england">England</option>
+                    <option value="france">France</option>
+                    <option value="turkey">Turkey</option>
+                    <option value="canada">Canada</option>
+                    <option value="china">China</option>                  
+                </select>
+                <br>
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email" placeholder="example@example.com"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <br>
+                <label for="phone"> Phone</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx xxx xxxx" maxlength="10">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password...">
+                <br>
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password" id="password" placeholder="Password...">
+                <hr>
+                <div class="agree-info">
+                    <input type="checkbox" name="agree" id="agree">
+                    <label for="agree">I agree to the Terms of Use</label>
+                </div>
+
+            </div>
+            <div class="buttons">
+                <input id="button-submit" type="submit" value="Submit">
+                <input id="button-cancel" type="reset" value="Cancel">
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

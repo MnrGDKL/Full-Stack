@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+<body>
+    <form action="result.html" method="get" name="myform">
+        <div id="choose-car">
+            <label for="cars">Choose a car:</label>
+            <br>
+            <select name="cars" id="cars" size="3" multiple required>
+                <option value="porche">Porche</option>
+                <option value="ferrari">Ferrari</option>
+                <option value="mercedes" selected>Mercedes</option>
+                <option value="bmw">BMW</option>
+                <option value="mazda">Mazda</option>
+            </select>
+
+        </div>
+        <hr>
+        <div>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars" size="7" multiple required>
+                <optgroup label="Expensive Cars">
+                    <option value="porche">Porche</option>
+                    <option value="ferrari">Ferrari</option>
+                </optgroup>
+                <optgroup label="Other Cars">
+                    <option value="mercedes" selected>Mercedes</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mazda">Mazda</option>
+                </optgroup>
+            </select>
+        </div>
+        <hr>
+        <div>
+            <label for="message">Enter your comments here:<label>
+            <br>
+            <textarea
+                name="message" 
+                id="message" 
+                cols="40" 
+                rows="5" 
+                placeholder="Enter your comments here...(400 max)"
+                maxlength="400"
+                style="resize: none;"
+            >
+            </textarea> 
+        </div>
+        <hr>
+        <div>
+            <label for="mybrowser">Browser:</label>
+            <br>
+            <input
+                type="text" 
+                name="browser-option" 
+                id="mybrowser" 
+                list="browsers"
+            >
+            <datalist id="browsers">
+                <option value="Chrome"></option>
+                <option value="Brave"></option>
+                <option value="Mozilla"></option>
+                <option value="Opera"></option>
+                <option value="Internet Explorer"></option>
+                <option value="Yandex"></option>
+            </datalist>
+        </div>
+        <hr>
+        <div>
+            <fieldset>
+                <legend style="text-align: center;">Personal Info :</legend>
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" placeholder="Name...">
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password..."/>
+                <br><br>
+                <label for="date">Birthday:</label>
+                <input type="date" name="date" id="date"/>
+
+            </fieldset>
+        </div>
+        <input type="submit" value="SEND" name="submit" id="submit">
+    </form>
+
+</body>
+</html>
