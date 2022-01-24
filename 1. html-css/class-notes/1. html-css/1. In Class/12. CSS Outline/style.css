@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    margin: auto;
+    margin-top: 20px;
+    /* background-color: burlywood;
+    border: 2px solid blue; */
+    width: 50%;
+    height: 100px;
+    text-align: center;
+    font-size: 25px;
+    padding: 30px;
+}
+
+.inner{
+    background-color: white;
+    width: 50%;
+    vertical-align: middle;
+    margin: auto;
+    padding: 10px;
+    outline: 5px solid red;
+    outline-offset: 10px;
+}
+
+.inner:hover{
+    outline-color: blue;
+    outline-offset: 5px;
+    cursor: pointer;
+    background-color: rgb(114, 112, 112);
+    color: white;
+}

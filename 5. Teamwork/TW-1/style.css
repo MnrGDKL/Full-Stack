@@ -6,7 +6,7 @@
 
 .main-container{
     width: 70%;
-    margin: auto;
+    margin: 10px auto;
     border: 3px blue solid;
     padding: 2%;
     display: flex;

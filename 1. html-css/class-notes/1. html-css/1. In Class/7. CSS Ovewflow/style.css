@@ -1,0 +1,30 @@
+.box{
+    border: 3px solid red;
+    width: 50%;
+    margin-bottom: 70px;
+    max-height: 100px;
+}
+
+#item1{
+    overflow:visible;
+}
+
+#item2{
+    overflow:hidden;
+}
+
+#item3{
+    overflow:scroll;
+}
+
+#item4{
+    overflow:auto;
+}
+
+#parag5{
+    width: 1000px;
+}
+
+#item5{
+    overflow: auto;
+}

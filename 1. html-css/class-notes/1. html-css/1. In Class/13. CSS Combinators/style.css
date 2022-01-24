@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 25px;
+    background-color: wheat
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+    color: crimson;
+}
+
+.brand{
+    width: 50%;
+    float: right;
+    padding: 10px;
+}
+
+div p {
+    color: #2a5d80;
+    font-weight: bold
+}
+
+div > p{
+    background-color: plum;
+}
+
+li > p{
+    border: 3px solid blue;
+}
+
+div + p {
+        border: 15px groove rgb(1, 255, 14)  ;
+}
+
+div ~ p{
+    background-color: red;
+}
+
+div ~ img{
+    border: 3px solid;
+}
