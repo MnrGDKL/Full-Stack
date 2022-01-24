@@ -1,0 +1,50 @@
+img {
+    border: 4px solid white;
+    opacity: 0.6;
+}
+
+a:hover{
+    background-color: firebrick;
+    text-decoration: none;
+}
+
+img:hover{
+    border: 4px solid black;
+    border-radius: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+ul li:first-child{
+    color: red;
+}
+
+ul li:last-child{
+    color: forestgreen;
+}
+
+ul li:nth-child(3){
+    color: blue;
+    font-weight: bolder;
+}
+
+input:focus{
+    background-color: orangered;
+    border: 4px solid gray;
+}
+
+p::first-letter{
+    font-weight: bolder;
+    color: magenta;
+    font-size: 40px;
+}
+
+p::first-line{
+    font-variant: small-caps;
+}
+
+p::after{
+    content: "\2615";
+    font-size: 50px;
+    color: blue;
+}
