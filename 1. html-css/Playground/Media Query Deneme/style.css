@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: right;
+    background-color: rgb(87, 85, 85);
+    padding: 5px;
+}
+
+a{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.main{
+    width: 100%;
+    background-color: yellow;
+    height: 100vh;
+    display: flex;
+}
+.box{
+    width: 75%;
+    border: 15px solid blue;
+    height: 250px;
+    background-color: green;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.mobile-text, .tablet-text{
+    display:none;
+}
+
+@media only screen and (max-width:600px) {
+    header{
+        flex-direction: column;
+        text-align: center;
+        box-sizing: content-box;
+    }
+
+    a{
+        background-color: cyan;
+        color: black;
+        border: 1px solid gray;
+        margin: 0;
+    }
+
+    a:hover{
+        border: 3px solid gray;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .desktop-text{
+        display: none;
+    }
+
+    .mobile-text{
+        display: block;
+        font-size: 20px;
+        word-spacing: 5px;
+    }
+
+    .main{
+        background-color: peru;
+    }
+    .box{
+        border-color: rgb(252, 235, 4);
+        background-color: purple;
+        color: white;
+        border-radius: 40px;
+        margin-top: 30px;
+    }
+
+}
+
+@media only screen and (max-width:992px) and (min-width:600px)  {
+    header{
+        justify-content:space-evenly;
+        box-sizing: content-box;
+        background-color: rgb(65, 65, 65);
+    }
+    a:hover{
+        font-size: 24px;
+        padding: 5px;
+        color: yellowgreen;
+    }
+
+    .main{
+        background-color: orangered;
+    }
+
+    .box{
+        border-color: rgb(117, 30, 151);
+        background-color: yellow;
+        border-radius: 20px;
+    }
+
+    .desktop-text{
+        display: none;
+    }
+    .tablet-text{
+        display: initial;
+        font-size: 24px;
+    }
+    
+}
