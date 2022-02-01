@@ -38,6 +38,25 @@ console.log(str.includes("simply")); // true
 console.log(str.includes("Simply")); // false
 
 
+console.log(str.indexOf("simply"));  // 15
+console.log(str.indexOf("Simply"));  // -1
+console.log(str.indexOf("clarusway"));  // -1
+
+console.log(str.lastIndexOf("in")); // 65
+
+var new_str = str.replace("in", "IN");
+console.log(new_str);
+
+var new_str = str.replaceAll("in", "IN");
+
+console.log(new_str);
+
+
+
+
+
+
+
 
 
 
