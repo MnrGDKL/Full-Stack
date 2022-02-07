@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    color: #666666;
+    height: 100%;
+}
+
+.background--image1 {
+    background-image: url(./img/bg.jpg);
+    min-height: 100%;
+}
+
+.background--image2 {
+    background-image: url(./img/bg2.jpg);
+    min-height: 80%;
+}
+
+.background--image3 {
+    background-image: url(./img/bg3.jpg);
+    min-height: 80%;
+}
+
+.background--image4 {
+    background-image: url(./img/bg4.jpg);
+    min-height: 80%;
+}
+
+.background--image{
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  position: relative;
+
+  opacity: 0.7;
+}
+
+.heading-container {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+.heading-container__heading{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2rem;
+
+    border-radius: 2rem 0 2rem 0;
+    outline: 0.5rem inset purple;
+    outline-offset: 1rem;
+}
+
+.heading-container__logo{
+    width: 30%;
+}
+
+.heading-container__text{
+    text-transform: capitalize;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0.7rem;
+    border-radius: 0.7rem 0 0.7rem 0;
+    outline: 0.4rem inset purple;
+    outline-offset: 0.2rem;
+}
+
+.section {
+    text-align: center;
+    padding: 3rem 5rem;
+    background-color: #F1F1F1;
+    line-height: 1.8rem;
+}
+
+.section--light {
+    background-color: #F1F1F1;
+    line-height: 1.8rem;
+}
+
+.section--dark {
+    background-color: #282E34;
+    color: white;
+    line-height: 1.8rem;
+}
+
+@media (max-width:768px) {
+    .heading-container{
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .heading-container__heading{
+        padding: 1rem;
+        border-radius: 1rem 0 1rem 0;
+        outline: 0.5rem inset purple;
+        outline-offset: 1rem;
+    }
+
+    .section {
+        padding: 1.5rem 2rem;
+        line-height: 1.8rem;
+    }
+
+    .heading-container__text{
+        font-size: 2rem;
+        padding: 0.7rem;
+        border-radius: 0.5rem 0 0.5rem 0;
+        outline: 0.4rem inset purple;
+        outline-offset: 0.2rem;
+    }
+
+    .heading-container__logo{
+        width: 50%;
+    }
+}
+
+@media (max-width:560px) {
+    .background--image{
+        background-attachment: scroll;
+    }
+
+    .heading-container{
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
