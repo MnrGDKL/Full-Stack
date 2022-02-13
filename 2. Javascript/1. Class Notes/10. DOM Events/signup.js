@@ -81,15 +81,15 @@ let charSpan = document.getElementById("charCount");
 
 lastName.addEventListener("keyup", ()=> {
     if (lastName.value.length == 0) {
-        charSpan.style.display = "none";
+        charSpan.style.visibility = "hidden";
     }else{
-        charSpan.style.display = "inline";
+        charSpan.style.visibility = "visible";
         charSpan.innerText = lastName.value.length + " / 40";
 
     }
 })
 
-
+/* 
 let birthdayPicker = document.querySelector("[name=birthday]");
 birthdayPicker.addEventListener("change", ()=>{
     console.log(birthdayPicker.value);
@@ -99,9 +99,9 @@ birthdayPicker.addEventListener("change", ()=>{
     alert(`You are ${year} years old.`);
 })
 
+ */
 
-
-
-
-
-
+let phone = document.querySelector("[name=phone]");
+phone.setAttribute("type", "tel");
+phone.setAttribute("maxlength", "10");
+phone.setAttribute("pattern", "[0-9]{9}[1-9]{1}");

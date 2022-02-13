@@ -1,0 +1,64 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 2fr) 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 80%;
+    min-height: 80vh;
+    }
+
+    .div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: rgba(223, 231, 208, 0.7);
+        opacity: 0.7;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 8 / 2; }
+    .div2 { grid-area: 1 / 2 / 3 / 4; 
+        background: url("https://picsum.photos/id/110/300/300") no-repeat center;}
+    .div3 { grid-area: 1 / 4 / 3 / 6;
+        background: url("https://picsum.photos/id/102/300/300") no-repeat center;}
+    .div4 { grid-area: 1 / 6 / 3 / 8; 
+        background: url("https://picsum.photos/id/118/300/300") no-repeat center;}
+    .div5 { grid-area: 3 / 2 / 5 / 3; 
+        background: url("https://picsum.photos/id/250/200/300") no-repeat center;}
+    .div6 { grid-area: 3 / 3 / 5 / 4;
+        background: url("https://picsum.photos/id/305/200/300") no-repeat center;}
+    .div7 { grid-area: 3 / 4 / 5 / 6; 
+        background: url("https://picsum.photos/id/402/300/300") no-repeat center;}
+    .div8 { grid-area: 3 / 6 / 5 / 8; 
+        background: url("https://picsum.photos/id/505/300/300") no-repeat center;}
+    .div9 { grid-area: 5 / 2 / 7 / 4; 
+        background: url("https://picsum.photos/id/610/300/300") no-repeat center;}
+    .div10 { grid-area: 5 / 4 / 7 / 5; 
+        background: url("https://picsum.photos/id/888/200/300") no-repeat center;}
+    .div11 { grid-area: 5 / 5 / 7 / 6; 
+        background: url("https://picsum.photos/id/901/200/300") no-repeat center;}
+    .div12 { grid-area: 5 / 6 / 7 / 8; 
+        background: url("https://picsum.photos/id/905/300/300") no-repeat center;}
+    .div13 { 
+        grid-area: 2 / 1 / 4 / 2; }
+    .div14 {
+        grid-area: 2 / 3 / 3 / 4; }
+    .div15 { 
+        grid-area: 2 / 5 / 3 / 6; }
+    .div16 { 
+        grid-area: 2 / 7 / 3 / 8; }
+    .div17 { 
+        grid-area: 4 / 7 / 5 / 8; }
+    .div18 { 
+        grid-area: 4 / 5 / 5 / 6; }
+    .div19 { 
+        grid-area: 4 / 3 / 5 / 4; }
+    .div20 { 
+        grid-area: 6 / 3 / 7 / 4; }
+    .div21 { 
+        grid-area: 6 / 4 / 7 / 5; }
+    .div22 { 
+        grid-area: 6 / 5 / 7 / 6; }
+    .div23 { 
+        grid-area: 6 / 7 / 7 / 8; }
