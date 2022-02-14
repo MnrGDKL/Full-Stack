@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find The Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="input-container">
+            <h2>Quess The Number (1 - 100)</h2>
+            <input type="text" name="number" id="input-number">
+            <input type="button" value="Quess" class="quess-btn">
+        </div>
+
+        <div class="result-container">
+            <p class="quess-result">
+               
+            </p>
+        </div>
+
+        <div class="attempt-container">
+            <span>Number of attempts :</span>
+            <span class="attempt-left">0</span>
+            <span class="prev-attempts" style="display: block;"></span>
+        </div>
+
+        <div>
+            <input type="button" value="TRY AGAIN">
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

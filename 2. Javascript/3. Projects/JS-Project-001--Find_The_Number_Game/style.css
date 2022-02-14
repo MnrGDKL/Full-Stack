@@ -1,0 +1,35 @@
+* {
+    margin: 0;;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    width: 40%;
+    margin: auto;
+    margin-top: 10vh;
+    height: 70vh;
+}
+
+.input-container{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.result-container{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.attempt-container{
+    color: blue;
+    font-weight:bolder;
+}
