@@ -43,7 +43,8 @@ eventUl.addEventListener("click", (e)=>{
 function AddEvent(eventText){
     let div = document.createElement("div");
     div.classList.add("event-div");
-    eventUl.appendChild(div);
+    // eventUl.appendChild(div);
+    eventUl.prepend(div);
 
     let checkBtn = document.createElement("button");
     checkBtn.classList.add("event-check-btn");

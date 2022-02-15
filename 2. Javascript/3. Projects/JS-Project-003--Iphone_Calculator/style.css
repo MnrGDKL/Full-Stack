@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
 .main-box{
-  width: 563px;
-  height: 1218px;
-  margin-top: 3vh;
+  width: 400px;
+  height: 98vh;
+  margin-top: 1vh;
   background-color: black;
   color: white;
   border-radius: 50px;
@@ -17,12 +17,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0px 0px 20px black;
+  outline: 2px solid white;
 }
 
 .icon-box{
   display: flex;
   justify-content:space-between;
-  height: 160px;
+  height: 75px;
   align-items: flex-start;
 }
 .left-corner{
@@ -67,24 +69,23 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 400px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  overflow:hidden;
 
 }
 
 .screen-1{
-  display: block;
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #A5A5A5;
+  letter-spacing: 5px;
 }
 
 .screen-2{
   display: block;
-  font-size: 6rem;
-  min-height: 150px;
-
-  
+  font-size: 5rem;
+  min-height: 100px;  
 }
 
 .calculator-box{
@@ -97,7 +98,7 @@
     "I J K L"
     "M N O P"
     "R R S T";
-    gap: 1rem;
+    gap: .7rem;
 
 }
 .button{
@@ -106,11 +107,11 @@
   border-radius: 50%;
   cursor: pointer;
   display: flex;
-  font-size: 45px;
-  height: 110px;
+  font-size: 40px;
+  height: 80px;
   justify-content: center;
   transition: filter .3s;
-  width: 110px;
+  width: 80px;
 }
 .button:hover{
   opacity: 0.7;
@@ -119,8 +120,8 @@
 .number-0 {
   border-radius: 55px;
   justify-content: flex-start;
-  padding-left: 43px;
-  width: 250px;
+  padding-left: 30px;
+  width: 178px;
 }
 
 .function {
@@ -194,7 +195,7 @@
   display: flex;
   justify-content: center;
   align-items:flex-end;
-  height: 150px;
+  height: 70px;
 }
 
 .bottom{
