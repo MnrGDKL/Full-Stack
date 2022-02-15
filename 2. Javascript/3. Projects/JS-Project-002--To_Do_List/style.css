@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700,300italic);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(18deg, rgb(17, 200, 220), rgb(90, 67, 121));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin: 5rem;
+    min-height: 50vh;
+    overflow:unset;
+}
+h1 {
+    color: #f4f4f4;
+    font-weight: 800;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.add-event-container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.add-event-input{
+    margin: 5px 0;
+    background: #f4f4f4;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.add-btn{
+    font-weight: bold;
+    padding: 0.3rem 0.6rem ;
+    font-size: 1.4em;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background: #92e67d;
+    border: none;
+}
+.number-of-events{
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+    padding: 10px 0;
+}
+.list-box{
+    height: 400px;
+}
+.event-div {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    background: #f4f4f4;
+    border-radius: 0.5rem;
+}
+
+.event-div li,
+.event-div button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.7rem;
+}
+
+.event-li{
+    background-color: white;
+    color: black;
+    flex: 1;
+}
+
+.event-div button {
+    cursor: pointer;
+    /* background: #cef8f8; */
+    border: none;
+}
+.event-check-btn:hover{
+    color: #10b410;
+}
+.event-trash-btn:hover {
+    color: #ff5050;
+}
+
+.checked {
+    opacity: 0.6;
+    text-decoration: line-through;
+    color: red;
+}
+
+.checked-icon{
+    color: #10b410;
+}

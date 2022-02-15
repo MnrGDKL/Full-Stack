@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gainsboro;
+}
+.main-box{
+    margin: auto;
+    margin-top: 50px;
+    width: 60vw;
+    height: 60vh;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgb(220, 235, 230);
+    box-shadow: 0px 0px 20px rgb(74, 74, 90);
+    
+}
+
+.head{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 30px 0;
+    width: 100%;
+}
+
+.numbers{
+    width: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.btn{
+    color: white;
+    font-size: 1.2em;
+    background-color: blue;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.btn:hover{
+    background-color: red;
+}
+.lottery-box{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    outline: 2px double;
+    outline-offset: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.lottery-box p{
+   min-height:40px;
+   border-radius: 10px;
+   font-size: 1.2em;
+   font-weight:inherit; 
+}

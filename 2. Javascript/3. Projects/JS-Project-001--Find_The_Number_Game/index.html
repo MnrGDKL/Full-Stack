@@ -6,30 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find The Number</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
     <div class="main-container">
         <div class="input-container">
-            <h2>Quess The Number (1 - 100)</h2>
+            <h2>Guess The Number (1 - 100)</h2>
             <input type="text" name="number" id="input-number">
-            <input type="button" value="Quess" class="quess-btn">
+            <input type="button" value="Guess" class="quess-btn">
         </div>
 
         <div class="result-container">
             <p class="quess-result">
                
             </p>
+            <img src="./img/congrats.gif" alt="">
         </div>
 
         <div class="attempt-container">
-            <span>Number of attempts :</span>
-            <span class="attempt-left">0</span>
-            <span class="prev-attempts" style="display: block;"></span>
+            <p>Number of Attempts :</span>
+            <span class="attempt-left">10 left</span>
+            <p class="prev-attempts"> </span>
         </div>
-
-        <div>
-            <input type="button" value="TRY AGAIN">
-        </div>
+        <input class="new-game" type="button" value="New Game">
     </div>
     <script src="./index.js"></script>
 </body>

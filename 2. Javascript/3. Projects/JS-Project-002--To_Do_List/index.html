@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="title">
+            <h1>DON'T FORGET TO..</h1>
+        </div>
+        
+        <div class="add-event-container">
+            <input class="add-event-input" type="text" name="new-event" placeholder="✍Add an event.." maxlength="100">
+            <button class="add-btn">+</button>
+        </div>
+
+        <div class="number-of-events">
+            <span class="active-event">0</span> out of <span class="total-event">1</span> tasks completed
+        </div>
+        <hr>
+        <div class="list-box">
+            <ul class="event-ul">
+                <div class="event-div">
+                    <button class="event-check-btn"> <i class='fas fa-check-square'></i></button>
+                    <li class="event-li">Go Shopping </li> 
+                    <button class="event-trash-btn"> <i class='fas fa-trash'></i> </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
