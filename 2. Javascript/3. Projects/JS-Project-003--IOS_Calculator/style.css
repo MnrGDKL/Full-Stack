@@ -5,6 +5,9 @@
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
+body{
+  background-color: rgb(161, 183, 206);
+}
 .main-box{
   width: 400px;
   height: 98vh;
@@ -29,16 +32,17 @@
 }
 .left-corner{
   display: flex;
-  width: 170px;
-  justify-content: space-between;
+  width: 130px;
+  justify-content: space-around;
   align-items: center;
 }
 .left-corner .sebeke-icon{
   width: 2rem;
 }
 .left-corner span{
-  font-size: .7rem;
+  font-size: .75rem;
   font-style: italic;
+  color: rgb(235, 235, 193);
 }
 
 .left-corner .wifi-icon{
@@ -80,6 +84,7 @@
   font-size: 2.5rem;
   color: #A5A5A5;
   letter-spacing: 5px;
+  /* visibility: hidden; */
 }
 
 .screen-2{

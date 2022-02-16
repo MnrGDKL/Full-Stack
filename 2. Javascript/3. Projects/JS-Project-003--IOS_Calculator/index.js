@@ -32,9 +32,10 @@ let num2        = 0;
 let numbers     = []; 
 let decimal     = 0;
 let result      = 0;
-let operator    = "";
 let oprs        = [];
-let countOpr    = 0;
+let count       = 0;
+let total       = 0;
+let operator    = "";
 
 screen1.innerText = "";
 screen2.innerText = "0";
@@ -43,31 +44,32 @@ screen2.innerText = "0";
 
 const updateTime = () => {
     const currentTime = new Date();
-  
     let currentHour = currentTime.getHours();
     const currentMinute = currentTime.getMinutes();
-  
-    hourEl.textContent = currentHour.toString();
+    hourEl.textContent = currentHour.toString().padStart(2, '0');
     minuteEl.textContent = currentMinute.toString().padStart(2, '0');
-    console.log(currentHour, currentMinute);
   }
+
   setInterval(updateTime, 1000);
   updateTime();
 
-
-
-
-reset.addEventListener("click", function reserAll(){
+function resetAll(){
     num1                = 0;
     num2                = 0;
     operator            = "";
     oprs                = [];
     numbers             = [];
+    count               = 0;
     decimal             = 0;
     result              = 0;
     screen1.innerText   = "";
-    screen2.innerText   = "0";
-});
+    screen2.innerText   = 0 ;
+    total               = 0;
+    operator            = "";
+};
+
+
+reset.addEventListener("click", resetAll);
 
 neg_pos.addEventListener("click", ()=>{
     if (screen2.innerText[0] !== "-"){
@@ -102,72 +104,74 @@ _dot.addEventListener("click", ()=>{
 });
 
 divide.addEventListener("click", ()=>{
-    num1 = +screen2.innerText;
-    numbers.push(num1);
-    screen2.innerText = "";
-    operator = "÷";
-    oprs.push(operator);
-    screen1.innerText += `${num1}${operator}`
+    if(operator !== "" && screen2.innerText == ""){}
+    else {
+        num1 = +screen2.innerText;
+        numbers.push(num1);
+        screen2.innerText = "";
+        operator = "÷";
+        oprs.push("÷");
+        screen1.innerText = (count == 1) ? num1 + operator : screen1.innerText + num1 + operator;
+        count = 0;
+    }
 });
 
 multiply.addEventListener("click", ()=>{
-    num1 = +screen2.innerText;
-    numbers.push(num1)
-    screen2.innerText = "";
-    operator = "x";
-    oprs.push(operator);
-    screen1.innerText += `${num1}${operator}`
+    if(operator !== "" && screen2.innerText == ""){}
+    else {
+        num1 = +screen2.innerText;
+        numbers.push(num1)
+        screen2.innerText = "";
+        operator = "x";
+        oprs.push("x");
+        screen1.innerText  = (count == 1) ? num1 + operator : screen1.innerText + num1 + operator;
+        count = 0;
+    }
 });
 
 subtract.addEventListener("click", ()=>{
-    num1 = +screen2.innerText;
-    numbers.push(num1)
-    screen2.innerText = "";
-    operator = "-";
-    oprs.push(operator);
-    screen1.innerText += `${num1}${operator}`
-
+    if(operator !== "" && screen2.innerText == ""){}
+    else {
+        num1 = +screen2.innerText;
+        numbers.push(num1)
+        screen2.innerText = "";
+        operator = "-";
+        oprs.push("-");
+        screen1.innerText  = (count == 1) ? num1 + operator : screen1.innerText + num1 + operator;
+        count = 0;
+    }
 });
 
 plus.addEventListener("click", ()=>{
-    num1 = +screen2.innerText;
-    numbers.push(num1)
-    screen2.innerText = "";
-    operator = "+";
-    oprs.push(operator);
-    screen1.innerText += `${num1}${operator}`
+    if(operator !== "" && screen2.innerText == ""){}
+    else {
+        num1 = +screen2.innerText;
+        numbers.push(num1);
+        screen2.innerText = " ";
+        operator = "+";
+        oprs.push("+");
+        screen1.innerText  = (count == 1) ? num1 + operator : screen1.innerText + num1 + operator;
+        count = 0;
+    }
 });
 
 equal.addEventListener("click", ()=>{
-    num2 = +screen2.innerText;
-    numbers.push(num2)
-    switch (operator) {
-        case "+":
-            result = num1 + num2;
-            screen2.innerText = result;
-            break;
-        case "-":
-            result = num1 - num2;
-            screen2.innerText = result;
-            break;
-        case "x":
-            result = num1 * num2;
-            screen2.innerText = result;
-            break;
-        case "÷":
-            num2 == 0 ? result = "∞" : result = num1 / num2 ;
-            screen2.innerText = result;
-            break;       
-        default:
-            resetAll();
-            break;
+    if (count == 0){
+        num2 = +screen2.innerText;
+        numbers.push(num2)
+        console.log(numbers, oprs, totalResult());
+        screen1.innerText = (screen1.innerText == "0") ? num2 : screen1.innerText + num2;
+        num1 = totalResult();
+        numbers = [];
+        oprs    = [];
+        operator = "";
+        screen2.innerText = num1;
     }
+    count = 1;
+});
 
-
-    num1 = result;
-    // console.log(numbers);
-    // console.log(oprs);
-    let total = numbers[0];
+function totalResult(){
+    total = numbers[0];
     for (let i = 0; i < numbers.length-1; i++) {
         switch (oprs[i]) {
             case "+":
@@ -186,10 +190,7 @@ equal.addEventListener("click", ()=>{
                 resetAll();
                 break;
         }
-
-        let string = screen1.innerText;
-        string += num2;
-        screen1.innerText = string;
-        screen2.innerText = total;
     }
-});
+    console.log(total);
+    return +(Math.round(total + "e+4") + "e-4");
+}
