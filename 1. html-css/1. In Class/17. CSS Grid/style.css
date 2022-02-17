@@ -19,7 +19,8 @@
     
     .div1 { grid-area: 1 / 1 / 8 / 2; }
     .div2 { grid-area: 1 / 2 / 3 / 4; 
-        background: url("https://picsum.photos/id/110/300/300") no-repeat center;}
+        background: url("https://picsum.photos/id/110/800/800") no-repeat center;
+    background-size: cover;}
     .div3 { grid-area: 1 / 4 / 3 / 6;
         background: url("https://picsum.photos/id/102/300/300") no-repeat center;}
     .div4 { grid-area: 1 / 6 / 3 / 8; 

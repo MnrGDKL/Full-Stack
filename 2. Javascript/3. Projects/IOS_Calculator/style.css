@@ -1,0 +1,105 @@
+*{
+  margin: 0;;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-box{
+  width: 400px;
+  height: 90%;
+  margin: auto;
+  margin-top: 1%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 40px;
+}
+
+.screen-box{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: center;
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.screen1{
+  font-size: 50px;
+  color: gray;
+  min-height: 80px;
+}
+
+.screen2{
+  font-size: 80px;
+}
+
+.calculator-box{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: 
+      "A B C D"
+      "E F G H"
+      "I J K L"
+      "M N O P"
+      "R R S T";
+      gap: 10px;
+      margin: auto;
+      margin-bottom: 20px;
+}
+
+.function-AC      {grid-area: A;}
+.negative-positive{grid-area: B;}
+.percentage       {grid-area: C;}
+.divide           {grid-area: D;}
+.number-7         {grid-area: E;}
+.number-8         {grid-area: F;}
+.number-9         {grid-area: G;}
+.multiply         {grid-area: H;}
+.number-4         {grid-area: I;}
+.number-5         {grid-area: J;}
+.number-6         {grid-area: K;}
+.subtract         {grid-area: L;}
+.number-1         {grid-area: M;}
+.number-2         {grid-area: N;}
+.number-3         {grid-area: O;}
+.plus             {grid-area: P;}
+.number-0         {grid-area: R;}
+.number-dot       {grid-area: S;}
+.equal            {grid-area: T;}
+
+.button{
+  background-color: #333;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.button:hover{
+  opacity: 0.6;
+
+}
+.number-0 {
+  width: 170px;
+  justify-content: left;
+  padding-left: 30px;
+}
+
+.function{
+  background-color: #a5a5a5;
+  color: black;
+}
+
+.operator{
+  background-color: #f1a33c;
+}

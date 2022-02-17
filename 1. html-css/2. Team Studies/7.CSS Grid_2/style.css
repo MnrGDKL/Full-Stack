@@ -1,0 +1,25 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 50px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    }
+    
+    .div1 { grid-area: 1 / 1 / 3 / 3; 
+    background-image: url("https://picsum.photos/id/684/300/200");}
+    .div2 { grid-area: 2 / 2 / 3 / 3; 
+        background-image: url("https://picsum.photos/id/680/100/100");}
+    .div3 { grid-area: 1 / 3 / 3 / 5; }
+    .div4 { grid-area: 1 / 4 / 2 / 5; }
+    .div5 { grid-area: 3 / 1 / 5 / 5; }
+    .div6 { grid-area: 5 / 1 / 8 / 2; }
+    .div7 { grid-area: 5 / 2 / 8 / 3; }
+    .div8 { grid-area: 5 / 3 / 8 / 5; }
+    .div9 { grid-area: 5 / 3 / 6 / 4; }
+    .div10 { grid-area: 6 / 4 / 8 / 5; }
+
+    .parent div{
+        border: 2px solid;
+    }

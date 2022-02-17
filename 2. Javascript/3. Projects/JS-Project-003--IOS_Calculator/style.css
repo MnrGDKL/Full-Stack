@@ -10,11 +10,11 @@ body{
 }
 .main-box{
   width: 400px;
-  height: 98vh;
-  margin-top: 1vh;
+  height: 98%;
+  margin-top: 1%;
   background-color: black;
   color: white;
-  border-radius: 50px;
+  border-radius: 45px;
   padding: 20px;
   margin-left: 3vw;
   display: flex;
@@ -90,14 +90,14 @@ body{
 .screen-2{
   display: block;
   font-size: 5rem;
-  min-height: 100px;  
+  min-height: 100px;
 }
 
 .calculator-box{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 
+  grid-template-areas:
     "A B C D"
     "E F G H"
     "I J K L"
@@ -113,10 +113,10 @@ body{
   cursor: pointer;
   display: flex;
   font-size: 40px;
-  height: 80px;
+  height: 5rem;
   justify-content: center;
   transition: filter .3s;
-  width: 80px;
+  width: 5rem;
 }
 .button:hover{
   opacity: 0.7;
@@ -138,63 +138,25 @@ body{
   background: #f1a33c;
 }
 
-.function-AC{
-  grid-area: A;
-}
-.negative-positive{
-  grid-area: B;
-}
-.percentage{
-  grid-area: C;
-}
-.divide{
-  grid-area: D;
-}
-.number-7{
-  grid-area: E;
-}
-.number-8{
-  grid-area: F;
-}
-.number-9{
-  grid-area: G;
-}
-.multiply{
-  grid-area: H;
-}
-.number-4{
-  grid-area: I;
-}
-.number-5{
-  grid-area: J;
-}
-.number-6{
-  grid-area: K;
-}
-.subtract{
-  grid-area: L;
-}
-.number-1{
-  grid-area: M;
-}
-.number-2{
-  grid-area: N;
-}
-.number-3{
-  grid-area: O;
-}
-.plus{
-  grid-area: P;
-}
-.number-0{
-  grid-area: R;
-}
-.number-dot{
-  grid-area: S;
-}
-.equal{
-  grid-area: T;
-}
+.function-AC      {grid-area: A;}
+.negative-positive{grid-area: B;}
+.percentage       {grid-area: C;}
+.divide           {grid-area: D;}
+.number-7         {grid-area: E;}
+.number-8         {grid-area: F;}
+.number-9         {grid-area: G;}
+.multiply         {grid-area: H;}
+.number-4         {grid-area: I;}
+.number-5         {grid-area: J;}
+.number-6         {grid-area: K;}
+.subtract         {grid-area: L;}
+.number-1         {grid-area: M;}
+.number-2         {grid-area: N;}
+.number-3         {grid-area: O;}
+.plus             {grid-area: P;}
+.number-0         {grid-area: R;}
+.number-dot       {grid-area: S;}
+.equal            {grid-area: T;}
 
 .bottom-box{
   display: flex;

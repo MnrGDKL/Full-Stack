@@ -13,7 +13,9 @@ const multiply      = document.querySelector(".multiply");
 const subtract      = document.querySelector(".subtract");
 const plus          = document.querySelector(".plus");
 
-const _0            = document.querySelector(".number-0");
+const digit = document.querySelectorAll(".number");
+
+/* const _0            = document.querySelector(".number-0");
 const _1            = document.querySelector(".number-1");
 const _2            = document.querySelector(".number-2");
 const _3            = document.querySelector(".number-3");
@@ -22,15 +24,17 @@ const _5            = document.querySelector(".number-5");
 const _6            = document.querySelector(".number-6");
 const _7            = document.querySelector(".number-7");
 const _8            = document.querySelector(".number-8");
-const _9            = document.querySelector(".number-9");
+const _9            = document.querySelector(".number-9"); */
+
 const _dot          = document.querySelector(".number-dot");
+
+
 
 const equal         = document.querySelector(".equal");
 
 let num1        = 0;
 let num2        = 0;
 let numbers     = []; 
-let decimal     = 0;
 let result      = 0;
 let oprs        = [];
 let count       = 0;
@@ -60,7 +64,6 @@ function resetAll(){
     oprs                = [];
     numbers             = [];
     count               = 0;
-    decimal             = 0;
     result              = 0;
     screen1.innerText   = "";
     screen2.innerText   = 0 ;
@@ -84,7 +87,7 @@ percentage.addEventListener("click", ()=>{
     screen2.innerText = num / 100;
 });
 
-
+/* 
 _0.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "0" : screen2.innerText + "0" ;});
 _1.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "1" : screen2.innerText + "1" ;});
 _2.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "2" : screen2.innerText + "2" ;});
@@ -95,13 +98,19 @@ _6.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0")
 _7.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "7" : screen2.innerText + "7" ;});
 _8.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "8" : screen2.innerText + "8" ;});
 _9.addEventListener("click", ()=>{screen2.innerText = (screen2.innerText == "0") ? screen2.innerText = "9" : screen2.innerText + "9" ;});
+ */
 
-_dot.addEventListener("click", ()=>{
-    if (decimal == 0) {
-        screen2.innerText += "." ;
-        decimal = 1;
-    }   
-});
+for (let i = 0; i < digit.length-1; i++) {
+    digit[i].addEventListener("click", () =>{
+       screen2.innerText = (screen2.innerText == "0") ? digit[i].innerText : screen2.innerText + digit[i].innerText;
+    });
+
+}
+
+
+_dot.addEventListener("click",()=>{
+    if (!screen2.innerText.includes(".")){screen2.innerText += ".";}
+})
 
 divide.addEventListener("click", ()=>{
     if(operator !== "" && screen2.innerText == ""){}
