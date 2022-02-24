@@ -163,6 +163,9 @@ p {
 .quantity-controller button i {
   font-size: 12px;
 }
+.quantity-controller button:hover {
+  background-color: #c0c7c3;
+}
 .buy-detail {
   margin: 5px 0;
   border-top: 1px solid #bdbdbd;
@@ -184,7 +187,9 @@ p {
 .line-through {
   text-decoration: line-through;
 }
-
+button i{
+  cursor: pointer;
+}
 
 
 
@@ -426,6 +431,7 @@ p {
     font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     font-size: 12px;
     border-radius: 3px;
+    cursor: pointer;
   }
   .remove-product:hover {
     background-color: #a44;
