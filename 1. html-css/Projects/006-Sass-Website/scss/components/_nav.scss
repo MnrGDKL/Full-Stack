@@ -1,0 +1,25 @@
+.nav {
+    height: 10vh;
+
+    &__list{
+        text-align: right;
+    }
+    &__item{
+        display: inline;
+        padding: 1rem;
+    }
+    &__link{
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: none;
+        @include transition(1s);
+        
+        &:hover{
+            color: blue;
+        }
+        &--active{
+            color: $secondary-color;
+        }
+    }
+}
