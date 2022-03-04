@@ -2,8 +2,8 @@
 
 Javascript Workshop contains hands-on trainings and projects.
 
-- [List of Javascript Coding  challenges](./coding-challenges/README.md)
+- [Javascript Class Notes](./1. Class Notes/README.md)
 
-- [List of Javascript Projects](./Projects/README.md)
+- [Javascript Team Works](./2. Team Works/README.md)
 
-- [Javascript Session Class-notes](./class-notes/README.md)
+- [Javascript Porejects](./3. Projects/README.md)
