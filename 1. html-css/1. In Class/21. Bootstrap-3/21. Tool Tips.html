@@ -11,9 +11,18 @@
       crossorigin="anonymous"
     />
     <title>Bootstrap</title>
+    <style>
+      body{padding:40px;}
+    </style>
   </head>
   <body>
-    <h1 class="">Hello, Clarusway!</h1>
+    <h1 class="">TOOL TIP</h1>
+    <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top|end|bottom|start" title="ders bitti ama hoca uzatıyor">
+      Note For You
+    </button>
+
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -25,5 +34,11 @@
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
       crossorigin="anonymous"
     ></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+      </script>
   </body>
 </html>
