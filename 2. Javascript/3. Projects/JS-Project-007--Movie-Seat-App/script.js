@@ -33,9 +33,9 @@ function selectedMoviePrice(){
 }
 
 function calculations(){
-      count.textContent = localStorage.getItem("Selected Seats").split(",").length;
+      count.textContent = selectedSeats().length;
       film.textContent  = localStorage.getItem("Selected Movie");
-      total.textContent = localStorage.getItem("Selected Movie Price") * localStorage.getItem("Selected Seats").split(",").length;
+      total.textContent = localStorage.getItem("Selected Movie Price") * selectedSeats().length;
 }
 
 movies.addEventListener("change",()=>{
