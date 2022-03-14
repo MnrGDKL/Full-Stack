@@ -5,8 +5,31 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
+      <style>
+            * {
+               background-color: rgb(59, 58, 58); 
+               color: white;
+               font-size: 1.7rem;
+               text-align: justify;
+               padding: 0 10px;
+            }
+            div{ max-height: 50vh;}
+            span{
+                  color: rgb(2, 255, 2);
+            }
+      </style>
 </head>
 <body>
-      <script src="./wellFormedTring.js"></script>
+      <div>
+            <h1 style="color: yellow; text-align: center; font-size: 3rem;">Coding Challenge</h1>
+            <h3 style="color: red; text-align: center;">This is an interview question asked by Facebook.</h3>
+            <p>Given a string of round <span>"( )"</span>, curly <span>"{ }"</span>, and square <span>"[ ]"</span> open and closing brackets, return whether the brackets are balanced (well-formed).</p>
+            <p >Examples;</p>
+            <p>  - String = " { ( [ ] ) { [ ] } } " ==> true.</p>
+            <p>  - String = " ( [ ) ] " ==> false</p>
+            <p>  - String = " ( ( ( ) " ==> false.</p>
+      </div>
+      <script src="./new-wellFormedTring.js"></script>
+
 </body>
 </html>
