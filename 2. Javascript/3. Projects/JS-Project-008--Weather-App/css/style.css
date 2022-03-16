@@ -3,11 +3,11 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
   --bg_main: #035483;
-  --text_light: rgb(245, 248, 218);
-  --text_med: #53627c;
-  --text_dark: #1e2432;
+  --text_light: rgb(250, 250, 250);
+  --text_med: #2c4155;
+  --text_dark: #000000;
   --red: #ff0000;
-  --darkred: #c3112d;
+  --darkred: #ff0026;
   --orange: #ff8c00;
 }
 
@@ -54,13 +54,30 @@ body {
   background: var(--bg_main);
   color: var(--text_dark);
   padding: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-
+.main-container {
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  outline: 5px inset var(--text_dark);
+  outline-offset: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--text_med);
+  opacity: 0.85;
+  padding: 5px;
+}
 .container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 15px;
+  opacity: 1;
 }
 
 
@@ -68,26 +85,32 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .top-banner {
   color: var(--text_light);
+  opacity: 1;
 }
 
 .heading {
   font-weight: bold;
-  font-size: 4rem;
+  text-shadow: 3px 3px 2px black;
+  font-size: 3rem;
   letter-spacing: 0.02em;
-  padding: 0 0 30px 0;
+  padding: 0 0 10px 0;
+  color: yellow;
 }
 
 .top-banner form {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .top-banner form input {
-  font-size: 2rem;
+  font-size: 1.5rem;
   height: 40px;
   padding: 5px 5px 10px;
   border-bottom: 1px solid;
+  width: 100%;
+  text-align: center;
 }
 
 .top-banner form input::placeholder {
@@ -95,47 +118,63 @@ body {
 }
 
 .top-banner form button {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.1em;
   padding: 15px 20px;
-  margin-left: 15px;
-  border-radius: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
   background: var(--red);
   transition: background 0.3s ease-in-out;
+  width: 100%;
+  text-shadow: 3px 3px 2px black;
 }
 
 .top-banner form button:hover {
   background: var(--darkred);
 }
 
+.msg-box{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .top-banner form .msg {
   position: absolute;
   bottom: -40px;
   left: 0;
   max-width: 450px;
   min-height: 40px;
+  justify-content: center;
+
 }
+
 
 
 /* SECTION #2
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .ajax-section {
-  margin: 70px 0 20px;
+  margin-top: 40px;
+  opacity: 1;
+  height: 100%;
 }
 
 .ajax-section .cities {
-  display: grid;
-  grid-gap: 32px 20px;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  opacity: 1;
 }
+
 
 .ajax-section .city {
   position: relative;
-  padding: 40px 10%;
+  min-width: 250px;
+  padding: 10px 10%;
   border-radius: 20px;
   background: var(--text_light);
   color: var(--text_med);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ajax-section .city::after {
@@ -176,7 +215,7 @@ body {
 }
 
 .ajax-section .city-icon {
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100px;
   height: 100px;
 }
@@ -188,7 +227,7 @@ body {
   text-align: right;
   font-size: 1rem;
   color: var(--text_light);
-  margin-top: 40px;
+  margin-top: 20px 0;
 }
 
 .page-footer span {

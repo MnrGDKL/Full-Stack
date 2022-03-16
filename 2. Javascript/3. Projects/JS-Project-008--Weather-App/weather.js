@@ -1,54 +1,45 @@
 
-const input  = document.querySelector("input");
-const submit = document.querySelector("button");
-const msg    = document.querySelector(".msg");
+const form   = document.querySelector(".top-banner .container form");
+const input  = document.querySelector("div.container input");
+const msg    = document.querySelector(".top-banner span.msg");
+const cities = document.querySelector(".ajax-section .container .cities");
 
-const cities = document.querySelector(".cities");
+const myKey  = localStorage.setItem("ApiKey",EncryptStringAES("5149084a770f00d9c29edfadb4a0981d"));
 
-const myKey  = "5149084a770f00d9c29edfadb4a0981d";
-const baseURL= "https://api.openweathermap.org/data/2.5/weather?q=";
-
-const citiesArr = [];
-
-submit.addEventListener("click",(e)=>{
-      const city = input.value;
-      showWeather(city);
+form.addEventListener("submit",(e)=>{
+      getWeatherDataFromApi(input.value);
       input.value = "";
       input.focus();
       e.preventDefault();
-});
+})
 
+const getWeatherDataFromApi = async (cityName) =>{
+      const apiKey  = DecryptStringAES(localStorage.getItem("ApiKey"));
+      const baseURL = "https://api.openweathermap.org/data/2.5/weather?";
+      let units     = "metric";
+      let lang      = "tr";
 
-const showWeather = async (city) => {
-      const url = `${baseURL}${city}&appid=${myKey}&units=metric&lang=tr`;
-      try{      
-            const response = await axios({
-                  url   : `${url}`,
-                  method: "get"
-            })
-      const {data} = response;
-      if(city == ""){
-            msg.textContent = "Please search for a valid city 😩";
-            setTimeout(() => {msg.innerText = ""}, 3000);
-            }
-      else if (citiesArr.includes(data.name)){
-            msg.innerText = `You already show the weather for ${data.name}, Please search for another city 😉`;
-            setTimeout(() => {msg.innerText = ""}, 3000);
-      }
+      let url = baseURL + "q=" + cityName + "&appid=" + apiKey + "&units=" + units + "&lang=" + lang;
+      try {
+            const response = await axios(url);
+            const {name, sys, weather} = response.data;
 
-      else {
-            cities.innerHTML+= `
-                                    <ul class="city">
-                                          <li class="city-name"> ${data.name} <sup> ${data.sys.country}</sup></li>
-                                          <li class="city-temp"> ${Math.round(data.main.temp)}<sup>${"°C"}</sup></li>
-                                          <li><img class="city-icon" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="icon"></li>
-                                          <li><figcaption> ${data.weather[0].description} <figcaption></li>
-                                    </ul> `;
-                  citiesArr.push(data.name);
-      }
-      }
-      catch(error){
-            msg.innerText = `There is no city founded name with "${city}"`;
+            cities.innerHTML = `
+                              <li class="city">
+                                    <h2 class="city-name" data-name="${name}, ${sys.country}">
+                                          <span>${name}</span>
+                                          <sup>${sys.country}</sup>
+                                    </h2>
+                                    <div class="city-temp">1<sup>°C</sup></div>
+                                    <figure>
+                                          <img class="city-icon" src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png">
+                                          <figcaption>${weather[0].description}</figcaption>
+                                    </figure>
+                              </li>`;
+            document.body.style.backgroundImage = `url("https://source.unsplash.com/1600x900/?${cityName}")`;
+
+      } catch(error){
+            msg.innerText = "Please search for a valid city 😩";
             setTimeout(() => {msg.innerText = ""}, 3000);
       }
 }
