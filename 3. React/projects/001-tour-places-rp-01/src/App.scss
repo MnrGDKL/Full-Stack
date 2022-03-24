@@ -1,0 +1,14 @@
+@import "./scss/reset", "./scss/variables", "./components/header/Header.scss", "./components/main/Main.scss", "./components/navbar/Navbar.scss";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+
+body{
+      background-color: $backgroundColor;
+      font-family: "Amatic SC", cursive;
+}
+
+p{
+      font-family: "Hubbali", cursive;
+}
+
