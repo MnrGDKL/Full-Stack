@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Button from './button/Button';
+import StyledButton from './styledButton/StyledButton';
 
 const MaterialUi = () => {
   return (
-    <div>MaterialUi</div>
+    <div>
+      <Button />
+      <StyledButton/>
+    </div>
   )
 }
 
