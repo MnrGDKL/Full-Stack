@@ -31,6 +31,9 @@ const handleSave = (e) => {
                                     title: 'Date must be in the future!',
                                   }) :
   saveTask(title, date)
+  setTitle("");
+  setDate("");
+
 }
 
   return (
@@ -38,11 +41,11 @@ const handleSave = (e) => {
       <form className="add-form">
         <div className="form-control">
         <label htmlFor="taskName">Task</label>
-        <input onChange={saveTitle} type="text" placeholder="Add Task" id="taskName" name="taskName"/>
+        <input onChange={saveTitle} type="text" value={title} placeholder="Add Task" id="taskName" name="taskName"/>
         </div>
         <div className="form-control">
         <label htmlFor="date" >Day & Time</label>
-        <input onChange={saveDate} type="date" placeholder="Add Day & Time" id="date" name="date"/>
+        <input onChange={saveDate} type="date" value={date} placeholder="Add Day & Time" id="date" name="date"/>
         </div>
         <button onClick={handleSave}
               className="btn btn-block">Save Task</button>

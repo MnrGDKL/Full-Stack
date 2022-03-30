@@ -6,7 +6,7 @@ const Tasks = ({allTask, deleteTask, taskCompleted}) => {
     <div>
       {allTask.length < 1 
       ?
-      <h3>No Task to Show</h3> 
+      <h2>No Task to Show</h2> 
       :
       allTask.map(task => <Task  key = {task.id} 
                                   task = {task} 

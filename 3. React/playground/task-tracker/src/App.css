@@ -76,6 +76,9 @@ h3 {
   text-align: center;
   justify-content: space-between;
 }
+h2, h4{
+  text-align: center;
+}
 .tasks span{
   font-size: 30px;
   color: rgb(102, 18, 77);

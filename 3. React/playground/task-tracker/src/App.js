@@ -5,7 +5,7 @@ import Tasks from './components/tasks/Tasks';
 import { useState } from 'react';
 
 function App() {
-  const [details, setDetails] = useState(false)
+  const [details, setDetails] = useState(true)
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -64,10 +64,12 @@ function App() {
                 title = "Task Tracker"
                 color = {details ? "purple" : "red"}
                 details = {details} />
-        {details && <AddTask saveTask = {saveTask}/>}
-        {details && <Tasks allTask = {tasks}
-              deleteTask = {deleteTask}
-              taskCompleted = {completeTask}/>}
+        {details ?  <><AddTask saveTask = {saveTask}/>
+                      <Tasks allTask = {tasks}
+                            deleteTask = {deleteTask}
+                            taskCompleted = {completeTask}/>
+                    </> 
+                  : <h4>No Task to Show</h4>}
       </div>
     );
   }

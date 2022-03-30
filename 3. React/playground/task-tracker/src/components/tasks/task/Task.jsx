@@ -1,4 +1,3 @@
-import "./Task.css";
 import {FaTimesCircle} from "react-icons/fa"; 
 
 const Task = ({task, deleteTask, completedTask}) => {
