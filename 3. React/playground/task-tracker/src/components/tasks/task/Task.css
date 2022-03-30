@@ -1,0 +1,4 @@
+.task.completed {
+  text-decoration: line-through;
+  border-left: 50px solid rgb(226, 35, 35);
+}
