@@ -28,27 +28,7 @@ const fetchTasks = async () => {
      fetchTasks();
   }, []);
 
-  // DELETE TASK
-  // const deleteTask = (deletedTaskId) => {
-  //   // console.log("delete Task", deletedTaskId);
-  //   setTasks(tasks.filter((task) => task.id !== deletedTaskId));
-  // };
-
-  //! DELETE TASK with Fetch
-  // const deleteTask = async (deletedTaskId) => {
-  //   await fetch(`${baseURL}/${deletedTaskId}`, {
-  //     method: "DELETE",
-  //   });
-  //   setTasks(tasks.filter((task) => task.id !== deletedTaskId));
-  // }
-  
-  //! DELETE TASK with Axios
-  const deleteTask = async (deletedTaskId) => {
-    await axios.delete(`${baseURL}/${deletedTaskId}`);
-    setTasks(tasks.filter((task) => task.id !== deletedTaskId));
-  }
-
-  
+ 
 
   //! ADD TASK with Fetch
   // const addTask = async (newTask) => {
@@ -75,6 +55,27 @@ const fetchTasks = async () => {
   //   setTasks([...tasks, addNewTask]);
   // };
 
+   // DELETE TASK
+  // const deleteTask = (deletedTaskId) => {
+  // console.log("delete Task", deletedTaskId);
+  //   setTasks(tasks.filter((task) => task.id !== deletedTaskId));
+  // };
+
+  //! DELETE TASK with Fetch
+  // const deleteTask = async (deletedTaskId) => {
+  //   await fetch(`${baseURL}/${deletedTaskId}`, {
+  //     method: "DELETE",
+  //   });
+  //   setTasks(tasks.filter((task) => task.id !== deletedTaskId));
+  // }
+  
+  //! DELETE TASK with Axios
+  const deleteTask = async (deletedTaskId) => {
+    await axios.delete(`${baseURL}/${deletedTaskId}`);
+    setTasks(tasks.filter((task) => task.id !== deletedTaskId));
+  }
+
+  
   //! TOGGLE DONE with fetch
   // const toggleDone = async(toggleDoneId) => {
   //   const res = await fetch(`${baseURL}/${toggleDoneId}`);
