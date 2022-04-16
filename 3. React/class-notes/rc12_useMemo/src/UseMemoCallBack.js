@@ -26,13 +26,21 @@ const UseMemoCallBack = () => {
     return user.name.toLowerCase()
                     .includes(search.toLowerCase());
   }), [users,search])
+
+  const addUser = () => {
+    setUsers([...users, {
+      id: users.length + 1,
+      name: 'New User'
+    }])
+  }
+
   
   return (
     <div>
       <input type="search" onChange={(e)=>setText(e.target.value)}/>
       {/* <input type="search" ref={inputRef}/> */}
       <button onClick={handleSearch}>Search User</button>
-      <Users users={filteredUsers} />
+      <Users users={filteredUsers} addUser={addUser} />
     </div>
   )
 }
