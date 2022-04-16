@@ -1,15 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
+import "./App.css";
 
-export default class App extends Component {
-  setState(state) {
-    state = this.state + 1;
-  }
-  
-  render() {
+const App = () => {
+  return (
+    <div>
+      <div>
+      <div className='floors'>5</div>
+      <button >UP</button>
+      <button>DOWN</button>
 
-    return (
-      <div>App</div>
-    )
-  }
+      </div>
+      <div className='floors'>4</div>
+      <div className='floors'>3</div>
+      <div className='floors'>2</div>
+      <div className='floors'>1</div>
+      <div className='floors'>0</div>
+
+    </div>
+  )
 }
 
+export default App

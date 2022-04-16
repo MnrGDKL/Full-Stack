@@ -20,8 +20,8 @@ const UseRefComponent = () => {
   }, []);
 
   const changeBgColor = () => {
-    const randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
-    divRef.current.style.backgroundColor = randomColor;
+    // const randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+    // divRef.current.style.backgroundColor = randomColor;
     // const colors = ["orange", "red", "blue", "green", "yellow"];
     // const random = Math.floor(Math.random() * colors.length);
     // divRef.current.style.backgroundColor = colors[random];
