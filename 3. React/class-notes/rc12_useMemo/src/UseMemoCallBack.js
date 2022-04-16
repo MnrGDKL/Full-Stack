@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import Users from './components/Users';
 
 const UseMemoCallBack = () => {
@@ -20,6 +20,7 @@ const UseMemoCallBack = () => {
     // setSearch(inputRef.current.value)
   }
 
+  //! useMemo is used for memorization of variables
   const filteredUsers = useMemo(() => 
     
     users.filter(user => {
@@ -27,12 +28,13 @@ const UseMemoCallBack = () => {
                     .includes(search.toLowerCase());
   }), [users,search])
 
-  const addUser = () => {
+  //! useCallback is used for memorization of functions
+  const addUser = useCallback(() => {
     setUsers([...users, {
       id: users.length + 1,
-      name: 'New User'
+      name: `User ${users.length + 1}`
     }])
-  }
+  }, [users]);
 
   
   return (
