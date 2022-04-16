@@ -1,11 +1,16 @@
-import React from "react";
+import React, {memo} from "react";
+import UserCard from "./UserCard";
 
-const Users = () => {
+const Users = ({users}) => {
+  console.log("Users");
   return (
-    <div>
-      <h2>Users</h2>
+    <div className="users">
+      <button id="add-button">Add User</button>
+      {users?.map(user => {
+      return <UserCard key={user.id} user={user}/>
+      })}
     </div>
   );
 };
 
-export default Users;
+export default memo(Users);
