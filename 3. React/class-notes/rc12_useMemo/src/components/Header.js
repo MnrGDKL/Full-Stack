@@ -16,4 +16,4 @@ const Header = ({img}) => {
   );
 };
 
-export default React.memo(Header);
+export default memo(Header);
