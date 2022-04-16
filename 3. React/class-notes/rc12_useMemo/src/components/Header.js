@@ -1,7 +1,12 @@
-import React from "react";
-import cw from "../../assets/cw.png";
+import React, {memo} from "react";
+import cw from "../assets/cw_logo.png";
 
 const Header = ({img}) => {
+  //! when use memo, the Header component will not re-render when img changes
+  //! but the Header component will re-render when img changes
+  console.log("Header Component Rendered");
+
+
   return (
     <div className="header">
       <img src={img ? img : cw} 
@@ -11,4 +16,4 @@ const Header = ({img}) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);
