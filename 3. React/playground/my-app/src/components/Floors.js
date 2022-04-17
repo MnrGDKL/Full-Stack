@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { GoTriangleUp } from 'react-icons/go';
 import { VscTriangleDown } from 'react-icons/vsc';
+import { GiElevator } from 'react-icons/gi';
 
 const Floors = () => {
   const floors = [5,4,3,2,1,0]
@@ -8,6 +9,7 @@ const Floors = () => {
 
   const [elevator, setElevator] = React.useState(5);
   const [que, setQue] = React.useState([]);
+  let newQue = [];
 
   const handleGoUp = (floor) => {
     if (elevator < floors.length - 1 && floor === elevator) {
@@ -21,26 +23,27 @@ const Floors = () => {
     }
   }
 
-  const handleGoToFloor = (floor) => {
-    let newQue = [...que, floor];
+  const handleGoToFloor = () => {
     console.log("newQue", newQue);
-    setQue(newQue);
+    newQue.sort((a, b) => b - a);
+    setTimeout(() => {
+      setQue(newQue);
+    }, 2000);
 
   }
 
 
-  useEffect(() => {
-    // console.log(que)
-    if (que.length > 0) {
-      setTimeout(() => {
-        let currentque = que.sort((a, b) => b - a)[0];
-        // console.log("currentque", currentque);
-        setElevator(currentque);
-      }, 2000)
-      setQue(que.slice(1))
-      console.log("que", que);
-    }
-  }, [que])
+  // useEffect(() => {
+  //   if (que.length > 0) {
+  //     setTimeout(() => {
+  //       let currentque = que.sort((a, b) => b - a)[0];
+  //       // console.log("currentque", currentque);
+  //       setElevator(currentque);
+  //     }, 2000)
+  //     setQue(que.slice(1))
+  //     console.log("que", que);
+  //   }
+  // }, [que])
 
 
 
@@ -53,7 +56,9 @@ const Floors = () => {
             {elevator === floor ? (
               <div className='buttons-div'>
                 {floors.map(floor => 
-                  <button key={floor} onClick={()=>handleGoToFloor(floor)}>{floor}</button>)}
+                  <button key={floor} onClick={()=>{newQue.push(floor); console.log(newQue)}}>{floor}</button>)}
+                  <button className='go-button' 
+                            onClick={()=>handleGoToFloor()}><GiElevator/></button>
               </div>
             ) : null}
           </div>

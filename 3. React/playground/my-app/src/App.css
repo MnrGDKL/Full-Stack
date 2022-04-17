@@ -46,8 +46,8 @@
   margin: 5px auto;
 }
 .floors{
-  width: 100px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background-color: #61dafb;
   display: flex;
   justify-content: center;
@@ -58,8 +58,8 @@
 }
 
 .floors-active{
-  width: 100px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   background-color: #86db6c;
   display: flex;
   justify-content: center;
@@ -88,6 +88,11 @@
 
 .buttons-div > button:active {
   background-color: red;
+}
+
+.go-button{
+  background-color: red;
+  color: white;
 }
 
 
