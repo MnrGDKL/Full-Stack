@@ -9,18 +9,29 @@ import {
   Button,
 } from "@mui/material";
 
-import { signup } from "../utils/firebaseUtil";
+import { login, loginWithGoogle } from "../utils/firebaseUtil";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Register = () => {
+
+const Login = () => {
   const navigate = useNavigate();
-  const currentUser = true;
+  const { currentUser } = useSelector(state => state.auth)
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const handleGoogleSingIn = () => {
+    loginWithGoogle();
+  };
 
-  const handleSingUp = () => {
-    signup(email, password)
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/");
+    }
+  }, [currentUser, navigate]);
+
+  const handleLogin = () => {
+    login(email, password)
       .then(() => {
         navigate("/");
       })
@@ -41,12 +52,12 @@ const Register = () => {
         }}
       >
         <Avatar
-          alt="regiter_img"
-          src="https://cdn.pixabay.com/photo/2014/02/04/13/17/register-257986_960_720.jpg"
+          alt="avatar_img"
+          src="https://cdn.pixabay.com/photo/2017/03/21/02/00/user-2160923_960_720.png"
           sx={{ width: 156, height: 156 }}
         />
         <Typography variant="h4" component="h1" sx={{ m: 4 }}>
-          Register
+          Login
         </Typography>
 
         <form>
@@ -82,10 +93,20 @@ const Register = () => {
               <Button
                 variant="contained"
                 color="primary"
-                onClick={handleSingUp}
+                onClick={handleLogin}
                 fullWidth
               >
-                Register
+                Login
+              </Button>
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={handleGoogleSingIn}
+                fullWidth
+              >
+                CONTINUE WITH GOOGLE
               </Button>
             </Grid>
           </Grid>
@@ -95,4 +116,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
