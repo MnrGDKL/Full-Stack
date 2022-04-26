@@ -90,51 +90,24 @@ function countEncodings(s) {
 // );
 // console.log("4");
 
-let arr = [44, 30, 24, 32, 35, 30, 40, 38, 15]
-function coding(arr) {
+let arr = [44, 30, 24, 32, 35, 30, 40, 38,15]
+
+
+function ArrayChallenge(arr) {
   let profit = []
-  start = -1;
-  for (i = 0; i < arr.length; i++) {
+  let start = -1;
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] < arr[i + 1]) {
-      start = i
+      arr = arr.slice(i, arr.length)
+      start++;
+      for (let i = 1; i < arr.length; i++) {
+        profit.push(arr[i] - arr[0])
+        // profit.push(Math.max(...arr) - Math.min(...arr))
+      }
     }
   }
-  if (start == -1) {
-    return -1;
-  }
-  else {
-    arr.forEach((e, i) => {
-        if (e > arr[i + 1]) {
-            arr = arr.slice(i + 1, -1)
-            profit.push(Math.max(...arr) - Math.min(...arr))
-            console.log(arr, profit);
-        }
-    });
-  return Math.max(...profit)
-
+  return start == -1 ? -1 : Math.max(...profit);
 }
-}
+console.log(ArrayChallenge(arr));
 
 
-//     let start = 0;
-//     let end = 0;
-//     let profit
-//     for (let i = 0; i < arr.length; i++) {
-//       if (arr[i] < arr[i + 1]) {
-//         start = i+1;
-//         break
-//       }
-//     }
-//     console.log("start:", arr[start]);
-//     for (let j = start; j < arr.length; j++) {
-//       if (arr[j] > arr[j + 1]) {
-//         end = j;
-//       }
-
-//     }
-//     console.log("end:", arr[end]);
-//     profit = arr[end] - arr[start];
-//    return profit > 0 ? profit : -1;
-// }
-
-console.log(coding(arr));
