@@ -90,24 +90,68 @@ function countEncodings(s) {
 // );
 // console.log("4");
 
-let arr = [44, 30, 24, 32, 35, 30, 40, 38,15]
+// let arr = [44, 30, 24, 32, 35, 30, 40, 38,15]
 
 
-function ArrayChallenge(arr) {
-  let profit = []
-  let start = -1;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < arr[i + 1]) {
-      arr = arr.slice(i, arr.length)
-      start++;
-      for (let i = 1; i < arr.length; i++) {
-        profit.push(arr[i] - arr[0])
-        // profit.push(Math.max(...arr) - Math.min(...arr))
-      }
-    }
+// function ArrayChallenge(arr) {
+//   let profit = []
+//   let start = -1;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < arr[i + 1]) {
+//       arr = arr.slice(i, arr.length)
+//       start++;
+//       for (let i = 1; i < arr.length; i++) {
+//         profit.push(arr[i] - arr[0])
+//         // profit.push(Math.max(...arr) - Math.min(...arr))
+//       }
+//     }
+//   }
+//   return start == -1 ? -1 : Math.max(...profit);
+// }
+// console.log(ArrayChallenge(arr));
+
+// function findNumber (arr,k) {
+//   let count = 0
+//   for (item of arr) {
+//     if (item == k) {
+//       count++;
+//     }
+//   }
+//   return count > 0 ? "Yes" : "No";
+// }
+
+// console.log(findNumber([1,2,3,4,5,6,7,8,9,10],10));
+
+// function oddNumbers(l,r){
+//   let arr = [];
+//   for (let i = l; i <= r; i++) {
+//     i % 2 != 0 ? arr.push(i) : null; 
+//   }
+//   return arr;
+// }
+
+// console.log(oddNumbers(1,9));
+
+// input Format
+//The first line contains an integer, , the size of the array.
+//The second line contains  space-separated integers that describe .
+//Constraints
+//1 < n < 100
+//-100 < arr[i] < 100
+//Output Format
+
+
+function plusMinus (arr) {
+  let pos = 0;
+  let neg = 0;
+  let zero = 0;
+  for (let i = 0; i < arr.length; i++){
+      +arr[i] > 0 ? pos++ : +arr[i] < 0 ? neg++ : zero++;
   }
-  return start == -1 ? -1 : Math.max(...profit);
+  return (pos/arr.length).toFixed(6) + "\n" + (neg/arr.length).toFixed(6) + "\n" + (zero/arr.length).toFixed(6);
 }
-console.log(ArrayChallenge(arr));
 
+let n = prompt("Enter the size of the array");
+let arr = prompt("Enter the array elements separated by space").split(" ");
+console.log(plusMinus(arr));
 
