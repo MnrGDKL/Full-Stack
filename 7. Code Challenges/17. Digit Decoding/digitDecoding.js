@@ -141,17 +141,22 @@ function countEncodings(s) {
 //Output Format
 
 
-function plusMinus (arr) {
-  let pos = 0;
-  let neg = 0;
-  let zero = 0;
-  for (let i = 0; i < arr.length; i++){
-      +arr[i] > 0 ? pos++ : +arr[i] < 0 ? neg++ : zero++;
-  }
-  return (pos/arr.length).toFixed(6) + "\n" + (neg/arr.length).toFixed(6) + "\n" + (zero/arr.length).toFixed(6);
+// function plusMinus (arr) {
+//   let pos = 0;
+//   let neg = 0;
+//   let zero = 0;
+//   for (let i = 0; i < arr.length; i++){
+//       +arr[i] > 0 ? pos++ : +arr[i] < 0 ? neg++ : zero++;
+//   }
+//   return (pos/arr.length).toFixed(6) + "\n" + (neg/arr.length).toFixed(6) + "\n" + (zero/arr.length).toFixed(6);
+// }
+
+// let n = prompt("Enter the size of the array");
+// let arr = prompt("Enter the array elements separated by space").split(" ");
+// console.log(plusMinus(arr));
+
+
+
+function findSum(numbers, queries) {
+  
 }
-
-let n = prompt("Enter the size of the array");
-let arr = prompt("Enter the array elements separated by space").split(" ");
-console.log(plusMinus(arr));
-
