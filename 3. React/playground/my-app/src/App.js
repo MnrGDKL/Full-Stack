@@ -1,13 +1,19 @@
-import React from 'react'
-import "./App.css";
-import Floors from './components/Floors';
+import React from 'react';
+import './App.css';
+import 'h8k-components';
 
-const App = () => {
-  return (
-    <div>
-      <Floors/>
-    </div>
-  )
+import Slides from './components/Slides';
+const title = "Slideshow App";
+
+function App({slides}) {
+    return (
+        <div>
+            <h8k-navbar header={title}></h8k-navbar>
+            <div className="App">
+                <Slides slides={slides} />
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;

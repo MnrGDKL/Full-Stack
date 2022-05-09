@@ -1,98 +1,23 @@
 .App {
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navigation {
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#navigation button {
+  margin-right: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#slide {
+  border: 1px solid #eee;
+  padding: 1rem;
+  min-height: 300px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    min-width: 80px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.floor-box{
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px auto;
-}
-.floors{
-  width: 150px;
-  height: 150px;
-  background-color: #61dafb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  border: 2px solid black;
-
-}
-
-.floors-active{
-  width: 150px;
-  height: 150px;
-  background-color: #86db6c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  border: 2px solid black;
-}
-
-.up-down{
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-}
-
-
-
-.buttons-div{
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-}
-
-.buttons-div > button:hover {
-  background-color: yellow;
-}
-
-.buttons-div > button:active {
-  background-color: red;
-}
-
-.go-button{
-  background-color: red;
-  color: white;
-}
-
-
