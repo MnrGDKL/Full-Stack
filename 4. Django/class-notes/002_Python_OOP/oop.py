@@ -27,12 +27,36 @@ def print_type(data):
 
 #! SELF keyword
 
-class person:
-  name = "John"
-  age = 30
+# class person:
+#   name = "John"
+#   age = 30
 
-  def test(self):
-    print("test")
+#   def test(self):
+#     print("test")
+
+#   def set_details(self, name, age):
+#     self.name = name
+#     self.age = age
+
+#   def get_details(self):
+#     print(self.name, self.age)
+  
+
+
+# person1 = person()
+# person1.test() # test 
+# person.test(person1) # test
+
+# person1.get_details()
+
+# person1.set_details("Barry", 45)
+# person1.get_details()
+
+
+#! Static methods
+
+class Person:
+  company = "Clarusway"
 
   def set_details(self, name, age):
     self.name = name
@@ -40,15 +64,13 @@ class person:
 
   def get_details(self):
     print(self.name, self.age)
-  
+
+  @staticmethod
+  def salute():
+    print("Hi there!")
+
+person1 = Person()
+person1.salute()
 
 
-person1 = person()
-person1.test() # test 
-person.test(person1) # test
-
-person1.get_details()
-
-person1.set_details("Barry", 45)
-person1.get_details()
 
