@@ -74,20 +74,50 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 #! Special Methods
 
+# class Person:
+#   company = "Clarusway"
+
+#   def __init__(self, name, age):
+#     self.name = name
+#     self.age = age
+  
+#   #? __str__ method
+#   def __str__(self):
+#     return f"{self.name}, {self.age}"
+
+#   def get_details(self):
+#     print(self.name, self.age)
+
+# person1 = Person("Ahmet", 30)
+# person1.get_details()
+
+
+# liste = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# print(liste)
+# print(person1)
+# print(person1.__str__())
+
+
+#! Encapsulation and Abstraction
+
 class Person:
   company = "Clarusway"
 
   def __init__(self, name, age):
     self.name = name
     self.age = age
+    self._id = 12345  #! protected method
+    self.__id2 = 4213  #! private method
+
+  def __str__(self):
+    return f"{self.name}, {self.age}"
 
   def get_details(self):
     print(self.name, self.age)
 
 person1 = Person("Ahmet", 30)
-person1.get_details()
+print(person1._id)
+# print(person1.__id2)
 
-
-
-
+print(person1._Person__id2)
 
