@@ -100,14 +100,40 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 #! Encapsulation and Abstraction
 
+# class Person:
+#   company = "Clarusway"
+
+#   def __init__(self, name, age):
+#     self.name = name
+#     self.age = age
+#     self._id = 12345  #! protected method
+#     self.__id2 = 4213  #! private method
+
+#   def __str__(self):
+#     return f"{self.name}, {self.age}"
+
+#   def get_details(self):
+#     print(self.name, self.age)
+
+# person1 = Person("Ahmet", 30)
+# print(person1._id)
+# # print(person1.__id2)
+
+# print(person1._Person__id2)
+# print(person1.__dict__)
+
+# liste =  [4,2,9,11,5]
+# liste.sort()
+# print(liste)
+
+#! Inheritance and Polymorphism
+
 class Person:
   company = "Clarusway"
 
   def __init__(self, name, age):
     self.name = name
     self.age = age
-    self._id = 12345  #! protected method
-    self.__id2 = 4213  #! private method
 
   def __str__(self):
     return f"{self.name}, {self.age}"
@@ -115,18 +141,26 @@ class Person:
   def get_details(self):
     print(self.name, self.age)
 
-person1 = Person("Ahmet", 30)
-print(person1._id)
-# print(person1.__id2)
-
-print(person1._Person__id2)
-print(person1.__dict__)
-
-liste =  [4,2,9,11,5]
-liste.sort()
-print(liste)
-
-#! Inheritance and Polymorphism
+class Student:
+  def __init__(self, grade):
+    self.grade = grade
+  def get_details(self):
+      print(self.grade)
 
 
+class Employee(Person, Student):
+  def __init__(self, name, age, grade , salary):
+    super().__init__(name, age)
+    Student.__init__(self, grade)
+    self.salary = salary 
+  #! Overriding
+  def get_details(self):
+    # print(self.name, self.age, self.salary)
+    super().get_details()
+    print(self.grade)
+
+
+
+emp1 = Employee("Ahmet", 30, 3,25000)
+emp1.get_details()
 
