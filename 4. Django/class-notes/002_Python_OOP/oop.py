@@ -120,4 +120,13 @@ print(person1._id)
 # print(person1.__id2)
 
 print(person1._Person__id2)
+print(person1.__dict__)
+
+liste =  [4,2,9,11,5]
+liste.sort()
+print(liste)
+
+#! Inheritance and Polymorphism
+
+
 
