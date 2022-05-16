@@ -21,3 +21,19 @@ class Language(models.Model):
 #! PROTECT   - parent silinince hata verir
 #! DO_NOTHING - parent silinince hiçbir şey yapmaz
 #! SET_DEFAULT - parent silinince default değer atar
+
+
+class Frameworks(models.Model):
+  name = models.CharField(max_length=50)
+  language = models.ForeignKey(Language, on_delete=models.PROTECT, null=True) 
+
+  def __str__(self):
+    return self.name
+
+class Developer(models.Model):
+  first_name = models.CharField(max_length=50)
+  last_name = models.CharField(max_length=50)
+  frameworks = models.ManyToManyField(Frameworks)
+
+  def __str__(self):
+    return f"{self.first_name.title()} {self.last_name.upper()}"
