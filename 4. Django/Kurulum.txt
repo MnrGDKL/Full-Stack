@@ -1,0 +1,34 @@
+>>> virtualenv env
+>>> source .env/Scripts/activate
+>>> pip install django
+>>> django-admin startproject (proje ismi) .
+>>> python manage.py runserver 
+
+
+app eklemek için
+
+>>> python manage.py startapp (app ismi)
+
+>>> proje içerisinde settings.py INSTALLED_APPS ' e 
+>>>'app ismi',
+
+
+models oluşturduktan sonra 
+
+>>> python manage.py makemigrations
+
+>>> python manage.py migrate
+
+
+paket kontrolü için 
+
+>>> pip freeze 
+
+
+yüklü olan paketleri requirements.txt ye aktarıyor...
+
+>>> pip freeze > requirements.txt
+
+requirements.txt den yüklü olan paketleri alıp kuruyor...
+
+>>> pip install -r requirements.txt 
