@@ -1,0 +1,26 @@
+{% load static %}
+<head>  
+  <link rel="stylesheet" href="{% static 'app/style.css' %}">
+</head>
+
+<h1>This is a Django / Python Front page</h1>
+
+
+<h2> {{request.user}}</h2>
+
+<h3>
+  The best bootcamp is {{title | upper}}
+</h3>
+<h4>
+  {% for item in my_list %}
+    <li> {{item}} </li>
+  {% endfor %}
+</h4>
+ 
+{% comment %}
+  This
+  is
+  a
+  comment
+{% endcomment %}
+
