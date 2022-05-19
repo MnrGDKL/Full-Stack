@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.contrib import messages
 from .forms import StudentForm
 
 def index(request):
@@ -15,8 +15,13 @@ def student_page(request):
             student.profile_pic = request.FILES["profile_pic"]
             student.save()
         return redirect('student')
+
+
     context={
         'form': form
     }
+
+    messages.success(request,"Student saved successfully")
+    messages.error(request,"Student failed message")
 
     return render(request,'student/student.html', context)

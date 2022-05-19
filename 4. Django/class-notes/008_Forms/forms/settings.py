@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #3rd party apps
+    'crispy_forms',
     # my apps
-    'student',
+    "student",
 ]
 
 MIDDLEWARE = [
@@ -126,4 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/',
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
