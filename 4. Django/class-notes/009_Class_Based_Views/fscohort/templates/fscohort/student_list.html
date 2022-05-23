@@ -1,0 +1,21 @@
+{% extends 'fscohort/base.html' %} 
+
+{% block container %}
+<ul>
+    {% for student in students %}
+    <li> 
+        <div style="display: inline-block; width: 200px;">
+            {{ student.number }} - {{student.first_name}} {{student.last_name}} 
+        </div>
+        <button>
+            <a href="{% url 'update' student.id %}">Edit</a> 
+        </button>
+        <button>
+            <a href="{% url 'delete' student.id %}">Delete</a>
+        </button>
+        </li>
+            
+            
+    {%endfor%}
+</ul>
+{% endblock container %}
