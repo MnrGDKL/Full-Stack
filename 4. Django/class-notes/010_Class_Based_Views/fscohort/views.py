@@ -7,10 +7,13 @@ from .models import Student
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 # Create your views here.
 
-# def home(request):
-#     return render(request, "fscohort/home.html")
+def home(request):
+    return render(request, "fscohort/home.html")
 
 class HomeView(TemplateView):
     template_name = "fscohort/home.html"
@@ -47,6 +50,13 @@ def student_add(request):
 
     return render(request, "fscohort/student_add.html", context)
 
+class StudentCreateView(CreateView):
+    model = Student
+    form_class = StudentForm
+    template_name = "fscohort/student_add.html"
+    success_url = reverse_lazy("list")
+
+
 def student_detail(request,id):
     student = Student.objects.get(id=id)
     context = {
@@ -81,6 +91,17 @@ def student_update(request, id):
 
     return render(request, "fscohort/student_update.html", context)
 
+
+class StudentUpdateView(UpdateView):
+    model = Student
+    form_class = StudentForm
+    template_name = "fscohort/student_update.html"
+    # pk_url_kwarg = "id"
+    success_url = reverse_lazy("list")
+
+
+
+
 def student_delete(request, id):
 
     student = Student.objects.get(id=id)
@@ -95,3 +116,9 @@ def student_delete(request, id):
         "student":student
     }
     return render(request, "fscohort/student_delete.html",context)
+
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = "fscohort/student_delete.html"
+    success_url = reverse_lazy('list')
