@@ -10,6 +10,7 @@ def student_page(request):
     form = StudentForm(request.POST or None)
     if form.is_valid():
         # print(form.cleaned_data.get("first_name"), form.cleaned_data.get("last_name"), form.cleaned_data.get("number"))
+    
         student = form.save()
         if "profile_pic" in request.FILES:
             student.profile_pic = request.FILES["profile_pic"]
