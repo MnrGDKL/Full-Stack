@@ -1,7 +1,43 @@
 <h1>Weather App</h1>
-<p> {{weather.city}} </p>
-<p> {{weather.temperature}} </p>
-<p> {{weather.description}} </p>
-<p> <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png" alt=""> </p>
+<p>Enter your city below to get a forecast for the weather.</p>
+
+<form action="/" method="get">
+    <input type="text" name="city" placeholder="Eg. London, Paris..."/>
+    <input type="submit" value="Get Weather"/>
+</form>
+
+{% if messages %}
+    <div id="message">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    </div>
+{% endif %}
+
+<script>
+  setTimeout(() => {document.getElementById('message').style.display = 'none';
+  }, 3000);
+</script>
+
+<div style="display: flex; justify-content: space-evenly; flex-wrap: wrap; background-color: aqua;">
+  {% for city  in city_data %}
+    <div style="border: 1px solid black; padding: 10px; background-color: azure; width: 150px; margin: 10px; border-radius: 10px;">
+      <h2>{{ city.city }}</h2>
+      <p>{{ city.temperature}}</p>
+      <img src="https://openweathermap.org/img/wn/{{city.icon}}.png" alt="{{ city.description }}"/>
+      <p>{{ city.description }}</p>
+
+      <button>
+        <a href="{% url 'delete' city.city.id %}">
+          Delete
+        </a>
+      </button>
+  
+    </div>
+  {% endfor %}
+
+</div>
+
+
 
 
