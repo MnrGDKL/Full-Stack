@@ -267,7 +267,7 @@ admin.site.register(Review, ReviewAdmin)
 
 shell
 ```
-from products.models import Product, Review
+from product.models import Product, Review
 from faker import Faker
 faker = Faker()
 for product in Product.objects.iterator():
