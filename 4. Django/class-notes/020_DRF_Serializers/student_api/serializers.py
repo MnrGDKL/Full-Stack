@@ -1,6 +1,7 @@
 from wsgiref.validate import validator
 from rest_framework import serializers
-from student_api.models import Student 
+from student_api.models import Path, Student 
+from django.utils.timezone import now
  
 # class StudentSerializer(serializers.Serializer): 
 #     first_name = serializers.CharField(max_length=50) 
@@ -20,10 +21,11 @@ from student_api.models import Student
 #         instance.save()
 #         return instance
 
-class StudentSerializer(serializers.ModelSerializer): 
+class StudentSerializer(serializers.ModelSerializer):
+    days_since_register = serializers.SerializerMethodField()
     class Meta: 
         model = Student 
-        fields = ["id", "first_name", "last_name", "number"] 
+        fields = ["id", "first_name", "last_name", "number", "days_since_register"] 
         # fields = '__all__' 
         # exclude = ['number']
 
@@ -37,3 +39,14 @@ class StudentSerializer(serializers.ModelSerializer):
         if value.lower() == 'muhittin': 
             raise serializers.ValidationError("Muhittin can not be a stundent in our school") 
         return value
+        
+    def get_days_since_register(self, obj): 
+        return (now() - obj.register_date).days
+    
+class PathSerializer(serializers.ModelSerializer):
+    students = StudentSerializer(many=True)
+    # students = serializers.StringRelatedField(many=True)
+    # students = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    class Meta: 
+        model = Path 
+        fields = '__all__'
