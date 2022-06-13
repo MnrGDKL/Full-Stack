@@ -41,4 +41,44 @@ def todoCreate(request):
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
 
+# @api_view(["GET","POST"])
+# def todoUpdate(request, pk):
+#     try:
+#         todo = Todo.objects.get(pk=pk)
+#     except Todo.DoesNotExist:
+#         return Response(status=404)
+#     if request.method == 'GET':
+#         serializer = TodoSerializer(todo)
+#         return Response(serializer.data)
+#     elif request.method == 'POST':
+#         serializer = TodoSerializer(todo, data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#         return Response(serializer.errors, status=400)
+
+@api_view(["PUT"])
+def todoUpdate(request, pk):
+    try:
+        todo = Todo.objects.get(pk=pk)
+    except Todo.DoesNotExist:
+        return Response(status=404)
+    serializer = TodoSerializer(instance=todo, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
+
+
+    
+@api_view(["DELETE"])
+def todoDelete(request, pk):
+    try:
+        todo = Todo.objects.get(pk=pk)
+    except Todo.DoesNotExist:
+        return Response(status=404)
+    todo.delete()
+    return Response(status=204)
+    
+
 
