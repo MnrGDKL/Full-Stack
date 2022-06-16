@@ -168,17 +168,23 @@ def todoDelete(request, pk):
 #     lookup_field = "id"
     
 
+#! pagination classes
+from .pagination import SmallPageNumberPagination, LargePageNumberPagination
 class TodoMVS(viewsets.ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
         
-    @action(methods=["GET"], detail=False)
-    def todo_count(self, request):
-        todo_count = Todo.objects.filter(done=False).count()
-        count = {
-            'undo-todos': todo_count
-        }
-        return Response(count)    
+    # @action(methods=["GET"], detail=False)
+    # def todo_count(self, request):
+    #     todo_count = Todo.objects.filter(done=False).count()
+    #     count = {
+    #         'undo-todos': todo_count
+    #     }
+    #     return Response(count)    
+
+    # pagination_class = SmallPageNumberPagination
+    pagination_class = LargePageNumberPagination
+
 
 
         
