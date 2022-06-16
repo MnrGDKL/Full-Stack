@@ -1,0 +1,14 @@
+{% extends 'pizza/base.html' %}
+
+  
+  {% block content %}
+    {% load static %}
+    {% for pizza in pizza_number %}
+      <h1>Order Pizza</h1>
+      <form action="{% url 'pizzas' %}">
+        <input type="number" name="number" id="number" min="2">
+        <input type="submit" value="Get Pizzas" >
+      </form>
+    {% endfor %}
+
+  {% endblock content %}
