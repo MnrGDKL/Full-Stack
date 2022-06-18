@@ -169,7 +169,11 @@ def todoDelete(request, pk):
     
 
 #! pagination classes
-from .pagination import SmallPageNumberPagination, LargePageNumberPagination
+from .pagination import SmallPageNumberPagination, LargePageNumberPagination, SmallLimitOffsetPagination, MyCursorPagination
+
+
+#! Filtering
+from django_filters.rest_framework import DjangoFilterBackend
 class TodoMVS(viewsets.ModelViewSet):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
@@ -183,9 +187,17 @@ class TodoMVS(viewsets.ModelViewSet):
     #     return Response(count)    
 
     # pagination_class = SmallPageNumberPagination
-    pagination_class = LargePageNumberPagination
+    # pagination_class = LargePageNumberPagination
+    # pagination_class = SmallLimitOffsetPagination
+    # pagination_class = MyCursorPagination
+    # filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['task', 'priority', 'done']
 
-
+    # def get_queryset(self):
+    #     queryset = Todo.objects.all()
+    #     priority = self.request.query_params.get('priority')
+    #     if priority is not None:
+    #         queryset = queryset.filter(priority=priority)
+    #     return queryset
 
         
- 
